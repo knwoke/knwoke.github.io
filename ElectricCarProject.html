@@ -1,0 +1,75 @@
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electric Car Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li><a href="certifications.html">Skills & Certifications</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kevin-n-10b586221/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/knwoke" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://linktr.ee/kevinnwoke" class="icon brands fa-kaggle"><span class="label">Linktree</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Electric Car Demographic Analysis in Washington<br/>
+									</h1>
+								</header>
+								<div class="image main"><img src="images/electriccar.jpg" alt="" /></div>
+								<p>Electric vehicles have become increasingly prevalent on the road over the last few years. From 2016 to 2022, electric vehicle sales increased by 838%. Between 2020 and 2021 electric vehicle sales doubled.</p>
+								<p>I used an existing dataset titled 'Electric Vehicle Population Data [Washington US]' available on Kaggle for this analysis. This dataset contains various information about the EVs including the location, year, price, electric range, and type of electric vehicle. Using VLOOKUP I added information about the 'Make Country of Origin' for each vehicle. I created 2 additional datasets from the spreadsheet. One dataset filtered out the cars that did not have an MSRP and the other dataset filtered out the cars that did not have an electric range. The data was already cleaned. From the electric range filtered dataset, I created a normal distribution of the 'Electic Range' column to create categorical values for the electric ranges of the vehicles.</p>
+							    <h4>Analysis</h4>
+								<p>Despite the number of EVs increasing nearly every year since 2011 the aggregate MSRP of EVs were at an all-time high in 2013 and 2014. In 2013, the aggregate MSRP of EVs in the sample was $54,312,300 which is 167.69% greater than the 2019 total.</p>
+								<img src="images/AggregateMSRP.png" alt="" />
+								<p>At $120,673,755, the United States accounted for 62% of the aggregate MSRP by vehicle make country of origin. This is supported by producing 317% more cars than Japan (the next largest EV producing country)</p>
+								<img src="images/PercentMSRP.png" alt="" />
+								<p>The full analysis is available <a href="https://docs.google.com/spreadsheets/d/1ZwnoGhtC_QCTApwUyengHsz_9FMwdn7v/edit?usp=sharing&ouid=105620702349036623157&rtpof=true&sd=true">here</a>. Please download the spreadsheet for full functionality.</p>
+							</section>
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Kevin Nwoke</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

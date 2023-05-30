@@ -1,0 +1,73 @@
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Katz's Deli Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li><a href="certifications.html">Courses and Certifications</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kevin-n-10b586221/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/knwoke" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://linktr.ee/kevinnwoke" class="icon brands fa-kaggle"><span class="label">Linktree</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Katz's Deli Analysis<br/>
+									</h1>
+								</header>
+								<div class="image main"><img src="images/KatzsDeli.jpg" alt="" /></div>
+								<p>Using Streamlit and Python I built an interactive dashboard visualizing the geographic and rating distribution of Katz's reviews. The dashboard also includes a word cloud which helps inform what common themes drive certain reviews.</p>
+								<h3>Extracting Scholarship Data</h3>
+								<p>I selected Katz's Deli as my data source for this analysis since it is one of the most popular restaurants in the United States and would contain reviews from throughout the United States. The reviews included in the analysis are international in scope. I did not scrape reviews which were responses to other reviews. Due to the potential expanded analysis of this data, I scrapped additional variables such as number of followers and number of reviews which were not part of this analysis. To generate the dataset I created a web scraper in R using tidyverse, rvest, rtools and other R libraries. I scrapped reviews from 07/2005 through 05/23/2023. As I reviewed the results I observed that some pages were skipped. I anticipate that this occurred due to a slight variation from page to page in the HTML tags attributed to the elements I was trying to scrape. When this occurred I defaulted the element to NA. I introduced a random sleep element to the scraper to reduce the stress on Yelp.com's servers and mitigate the prospect of my IP address becoming blocked. Please feel free to take a look at the scraper <a href="https://github.com/knwoke/YelpWebScraper/blob/main/YelpScraper.R">here</a>.</p>
+								<h3>Transforming Scholarship Data</h3> 	
+								<p>After exporting the scrapped data to a CSV file, I also used Excel to remove rows which contained Null data. Once the data was cleaned I used VLOOKUP to assign latitude and longitude coordinates for each review for the map component of the analysis. I separated the date column in the individual month, day, and year columns for potential future analysis.</p>
+								<p>Please click on the following <a href="https://knwoke-yelpwebscraper-yelpapp-ghkalc.streamlit.app/">link</a> to see the entire dashboard.</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Kevin Nwoke</li><li><a href="https://html5up.net">Designed with HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>

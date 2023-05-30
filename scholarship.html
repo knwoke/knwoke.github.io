@@ -1,0 +1,88 @@
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Scholarship Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li><a href="certifications.html">Courses and Certifications</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kevin-n-10b586221/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/knwoke" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://linktr.ee/kevinnwoke" class="icon brands fa-kaggle"><span class="label">Linktree</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>SCHOLARSHIPS.COM Scholarship Analysis<br/></h1>
+								</header>
+									<p>Rising student debt is a topic that is always in the news. I have come across data detailing the demograhics of the student debt borrowers, but I have not seen a great deal of information detailing the demographics of scholarships available to borrowers. Scholarships are one of many factors which can help alleviate the financial pressures associated with pursuing a higher education. These visualizations help explain how different factors such as GPA, state of residence, and prospective major can influence the number of scholarships and the value of the scholarships a student would be eligible for. I intend for these dashboards to be living documents which will update as new data points and scholarships become available through web scraping. I hope that these visualizations can help prospective students better understand how different factors affect the availability of scholarships.</p>
+								<div class="image main"><img src="images/scholarship.jpg" alt="" /></div>
+								<h3>Extracting Scholarship Data</h3>
+								<p>I selected SCHOLARSHIPS.com as my data source for this analysis since it is the largest college scholarship search engine and has a comprehensize scholarship directory which is straightforward to scrape from. The scholarships included in the analysis are only available in the United States and the Marshall Islands. Due to a potential expanded scope of the analysis, I scrapped all of the available scholarships within the Scholarship Directory on SCHOLARSHIPS.com. My analysis was focused specifically on the GPA, Athletic Ability, State of Residence, ACT, and SAT tables within SCHOLARHSIP.com's Scholarship Directory. To generate the dataset I built a crawling web scraper in Python using Scrapy to extract current scholarships listed on the Scholarship Directory on 3/16/2023. I throttled the scraping to reduce the stress on SCHOLARSHIP.com's servers and mitigate the prospect of my IP address becoming blocked. Please feel free to take a look at the scraper <a href="https://github.com/knwoke/ScholarshipWebScraper/blob/main/scholarships11.py">here</a>. Please feel free to take a look at the scraped files <a href="https://www.kaggle.com/datasets/woahk27/scholarshipscom-scholarships">here.</a></p>
+								<h3>Transforming Scholarship Data</h3> 	
+								<p>After exporting the scrapped data to a CSV file, I also used Excel to remove rows which contained scholarships that had an amount of 'Varies'. I also removed Null or duplicated (based on scholarship name) data. The data was cleansed to standardize capitalization across the dataset. Once the data was cleaned I used the SplitToColumns feature of Excel separate the scholarship URL so the scholarship name was in separate column.</p>
+								<h3>Analysis</h3>
+                                <h4>GPA</h4>
+                                <p>Going into my analysis I expected more scholarships to be available for those with higher GPAs. I found the average scholarship amount in the 3.6 to 4.0 GPA range to be approximately 4 times greater than the average scholarship amount in the 2.6 to 3.0 range. However, the number of scholarships for the latter GPA range are approximately 10 times greater than the former GPA range.</br>
+                                    <img src="images/GPAscholar.png" alt="GPA" /></p>
+                                <h4>State of Residence</h4>
+                                <p>As indicated by the darker shading of the graph below, the total value of scholarships is higher in the western half (particularly the southwest) of the United States. Going into my analysis, I was expecting a higher concentration in the northeast given the higher population density in the region. </br>
+                                <img src="images/Statescholar.png" alt="State of Residence" />
+								<br/></p>
+							    <p>I subsequently broke up the map according to the United States Census group and found that the total scholarships ($7,460k) in the west is 88.8% greater than total scholarships in the northeast ($3,952k). </br>
+								<img src="images/Scholarshipbyregion.png" alt="Regional Scholarships" />
+								<br/></p>
+                                <h4>Field of Study</h4>
+                                <p>As expected, STEM majors have a higher total scholarship amount than other majors. Majors which contain the word 'engineering' have aggregate scholarship amounts BLANK percent greater than majors that do not contain the word 'engineering'. Take a look at this SQL query here.</p>
+								<p>Please click on the following <a href="https://public.tableau.com/app/profile/kevin.nwoke">link</a> to see the dashboards and worksheets.</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Kevin Nwoke</li><li><a href="https://html5up.net">Designed with HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Used Car Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li><a href="certifications.html">Courses and Certifications</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kevin-n-10b586221/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/knwoke" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://linktr.ee/kevinnwoke" class="icon brands fa-kaggle"><span class="label">Linktree</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>CARS.COM Used Car Analysis<br/>
+									</h1>
+									<p>The COVID-19 pandemic contributed to an increase in used car prices due in part to supplier shortages and increased consumer demand. I recently helped a friend in the market for a used car and observed that the prices were still elevated from pre-COVID levels. Curious I began analyzing how different used car characteristics influence the cost and availability of used cars.</p>
+								</header>
+								<div class="image main"><img src="images/UsedCars.png" alt="" /></div>
+								<h3>Extracting Car Listing Data</h3>
+								<p>I selected CARS.com as my data source for this analysis since it is the second largest automotive classified site and has a diverse population to draw from. This would allow for a large enough sample size to derive statistically relavant insights. The cars included in the analysis are local to the Dallas/Fort Worth metroplex. Given the broad scope of the analysis, I did not apply additional filters to the CARS.com search results. To generate the dataset I created a web scraper in Python using BeautifulSoup and Requests to extract current car listings from 12/5/2022 through 12/7/2022. I throttled the scraping to reduce the stress on CARS.com's servers and mitigate the prospect of my IP address becoming blocked. The scraper is available <a href="https://github.com/knwoke/Used-Car-Analysis/blob/main/CarListing.py">here</a></p>
+								<h3>Transforming Car Listing Data</h3> 	
+								<p>The returned results contained extraneous HTML tags I removed in Excel. After the HTML tags were removed, I also used Excel to remove rows which contained Null or duplicated (based on a combination of car name, mileage, and price) data. I also standardized capitalization across the dataset. Once the data was cleaned I created a new 'Year' column which is derived from the scraped 'Title' column which already included the model year and created new categorical variables based on different ranges of prices and mileages. I loaded the finalized dataset into an Excel worksheet for analysis.</p>
+								<p><b>Used car datasets: </b><a href="https://www.kaggle.com/datasets/woahk27/carscom-used-cars">Kaggle</a></p>
+								<h3>Analysis</h3>
+								<p>Please click on the following <a href="https://drive.google.com/drive/folders/1PrPhGbpYLUZ2Y2StTTcnmcRBXThx6rZI">link</a> to review the analysis</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Kevin Nwoke</li><li><a href="https://html5up.net">Designed with HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
